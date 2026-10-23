@@ -36,4 +36,5 @@ RUN bundle install --jobs 4 --retry 3 --verbose
 # Now copy rest of the app
 COPY . /myapp
 
-
+RUN useradd -U -u 1000 appuser && chown -R 1000:1000 /myapp
+USER 1000
